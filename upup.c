@@ -12,14 +12,16 @@
 
 #include "printf.h"
 
-char *upup(char *c)
+char	*upup(char *c)
 {
-	int i = 0;
+	int	i;
+
+	i = 0;
 	while (c[i])
 	{
 		if (c[i] >= 'a' && c[i] <= 'z')
 			c[i] = c[i] + 32;
 		i++;
 	}
-	return(c);
+	return (c);
 }

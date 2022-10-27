@@ -10,31 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb, int *i)
 {
-	char a;
+	char	a;
 
 	if (nb == -2147483648)
 	{
-		ft_putnbr(nb / 10);
-		write (1, "8", 1);
+		ft_putnbr(nb / 10, i);
+		ft_putchar('8', i);
 	}
 	else if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(nb / 10, i);
+		ft_putnbr(nb % 10, i);
 	}
 	else if (nb < 0)
 	{
 		nb = (-1) * nb;
-		write (1, "-", 1);
-		ft_putnbr(nb);
+		ft_putchar('-', i);
+		ft_putnbr(nb, i);
 	}
 	else
 	{
 		a = '0' + (nb % 10);
-		ft_putchar(a);
+		ft_putchar(a, i);
 	}
 }

@@ -9,21 +9,20 @@
 /*   Updated: 2022/10/27 17:03:54 by admansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "printf.h"
+#include "ft_printf.h"
 
-void ft_putnbr_ui(unsigned int nb)
+void	ft_putnbr_ui(unsigned int nb, int *i)
 {
-	char a;
+	char	a;
 
 	if (nb > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr_ui(nb / 10, i);
+		ft_putnbr_ui(nb % 10, i);
 	}
 	else
 	{
 		a = '0' + (nb % 10);
-		ft_putchar(a);
+		ft_putchar(a, i);
 	}
 }
-
