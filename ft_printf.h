@@ -12,7 +12,7 @@
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "libft/libft.h"
+# include <unistd.h>
 # include <stdarg.h>
 
 int		ft_printf(const char *fprint, ...);
@@ -21,7 +21,6 @@ void	ft_putstr(char *c, int *i);
 void	ft_putnbr(int n, int *i);
 void	ft_putnbr_ui(unsigned int n, int *i);
 void	ft_putnbr_hexa(unsigned int nb, int *i);
-char	*upup(char *c);
 void	ft_putadres(unsigned long n, int *i);
 void	ft_putnbr_hexa_up(unsigned int nb, int *i);
 #endif

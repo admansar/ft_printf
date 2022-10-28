@@ -17,12 +17,11 @@ void	ft_putadres(unsigned long s, int *i)
 	char	*a;
 
 	a = "0123456789abcdef";
-	ft_putstr("0x", i);
 	if (s < 16)
 		ft_putchar(a[s], i);
 	else
 	{
-		ft_putnbr_hexa(s / 16, i);
-		ft_putnbr_hexa(s % 16, i);
+		ft_putadres(s / 16, i);
+		ft_putadres(s % 16, i);
 	}
 }
